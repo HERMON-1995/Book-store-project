@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-h1 {
+  color: rgb(3, 180, 239);
+}
+
+.book-list h1 span {
+  margin: 50px;
+}
+
+.remove-btn {
+  margin: 20px 20px 20px 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  gap: 20px;
+}
+
+.status-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
