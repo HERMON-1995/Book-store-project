@@ -12,7 +12,7 @@ const Categories = () => {
 
   return (
     <div className="status-div">
-      <button type="submit" className="status-btn" onClick={dispatchAction()}>Check Status</button>
+      <button type="submit" className="status-btn" onClick={dispatchAction}>Check Status</button>
       <h3>{allCategories}</h3>
     </div>
   );
