@@ -95,6 +95,9 @@ Clone this repository to your desired folder:
  ```sh
  npm install
  ```
+ ```sh
+ npm i -S uuid
+ ```
 
 ### Usage
 
