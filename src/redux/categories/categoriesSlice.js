@@ -4,7 +4,11 @@ const categorySlice = createSlice({
   name: 'categories',
   initialState: [],
   reducers: {
-    checkStatus: () => 'Under Construction.',
+    checkStatus: () => {
+      const statusBtn = document.querySelector('.status-btn');
+      statusBtn.style.display = 'none';
+      return 'Under Construction.';
+    },
   },
 });
 
