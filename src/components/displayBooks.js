@@ -1,31 +1,35 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadBooks } from '../redux/books/booksSlice';
 import Book from './book';
 
 const DisplayBooks = () => {
-  const books = useSelector((state) => state.books);
+  const { books } = useSelector((state) => state); // Destructuring state object
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadBooks());
   }, [dispatch]);
 
-  return (
-    <>
-      <div>
-        {Object.keys(books).length > 0 && Object.keys(books).map((id) => (
+  const renderBooks = () => {
+    if (Object.keys(books).length > 0) {
+      return Object.keys(books).map((id) => {
+        const [firstBook] = books[id];
+        const { author, title, category } = firstBook;
+        return (
           <div key={id}>
-            <Book
-              author={books[id] && books[id][0] && books[id][0].author}
-              title={books[id][0].title}
-              category={books[id][0].category}
-              bookId={id}
-            />
+            <Book author={author} title={title} category={category} bookId={id} />
           </div>
-        ))}
-      </div>
-    </>
+        );
+      });
+    }
+    return null;
+  };
+
+  return (
+    <div>
+      {renderBooks()}
+    </div>
   );
 };
 
