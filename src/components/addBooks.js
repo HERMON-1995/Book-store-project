@@ -9,11 +9,24 @@ function AddBook() {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Fiction');
 
-  const changeTitle = (e) => setTitle(e.target.value);
-  const changeAuthor = (e) => setAuthor(e.target.value);
-  const changeCategory = (e) => setCategory(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case 'title':
+        setTitle(value);
+        break;
+      case 'author':
+        setAuthor(value);
+        break;
+      case 'category':
+        setCategory(value);
+        break;
+      default:
+        break;
+    }
+  };
 
-  const addNewBook = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (title && author && category) {
       dispatch(createBook({ title, author, category }));
@@ -22,21 +35,34 @@ function AddBook() {
       setCategory('');
     }
   };
+
   return (
     <div>
       <h2 className="add-title">ADD NEW BOOK</h2>
-      <form onSubmit={addNewBook}>
-        <input type="text" placeholder="Book title" onChange={changeTitle} value={title} />
-        <input type="text" placeholder="Add author" onChange={changeAuthor} value={author} />
-        <select onChange={changeCategory} value={category}>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Book title"
+          value={title}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Add author"
+          value={author}
+          onChange={handleChange}
+        />
+        <select name="category" value={category} onChange={handleChange}>
           <option value="Computer-Science">Computer Science</option>
           <option value="Astrology">Health</option>
           <option value="Mathematics">Agriculture</option>
           <option value="Biology">Mechanical Engineering</option>
           <option value="Physics">Mathematics</option>
-          <option value="Physics">Fiction</option>
+          <option value="Fiction">Fiction</option>
           <option value="Biography">Biography</option>
-          <option value="Biography">Comics</option>
+          <option value="Comics">Comics</option>
         </select>
         <button type="submit">Add Book</button>
       </form>
