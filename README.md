@@ -95,8 +95,20 @@ Clone this repository to your desired folder:
  ```sh
  npm install
  ```
+```sh
+ npm install @reduxjs/toolkit react-redux
+ ```
  ```sh
- npm i -S uuid
+ npm install react-router-dom
+ ```
+ ```sh
+ npm install -S uuid
+ ```
+ ```sh
+ npm install axios
+ ```
+  ```sh
+ npm install prop-types
  ```
 
 ### Usage
@@ -126,7 +138,7 @@ npx stylelint "**/*.{css,scss}"
 
 ### Deployment
 
-- (Deployment method using Render)
+- [Deployment method using Render]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
