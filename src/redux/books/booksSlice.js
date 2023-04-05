@@ -1,36 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const booksSlice = createSlice({
-  name: 'books',
-  initialState:
-  [
-    {
-      id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
-  reducers: {
-    addBook: (state, action) => {
-      state.push(action.payload);
-    },
-    removeBook: (state, action) => state.filter((book) => book.id !== action.payload),
-  },
+const BOOKSTORE_API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ymqt9bZZ3hwpTLEEtE1N/books';
+
+// Actions
+export const loadBooks = createAsyncThunk('bookstore/books/LOAD', async () => {
+  const response = await axios.get(BOOKSTORE_API_URL);
+  return response.data;
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const createBook = createAsyncThunk('bookstore/books/CREATE', async ({ author, title, category }) => {
+  const book = {
+    item_id: uuidv4(), author, title, category,
+  };
+  await axios.post(BOOKSTORE_API_URL, book);
+  const response = await axios.get(BOOKSTORE_API_URL);
+  return response.data;
+});
 
-export default booksSlice.reducer;
+export const removeBook = createAsyncThunk('bookstore/books/REMOVE', async (bookId) => {
+  await axios.delete(`${BOOKSTORE_API_URL}/${bookId}`);
+  const response = await axios.get(BOOKSTORE_API_URL);
+  return response.data;
+});
+
+// Reducer
+export default function booksReducer(state = {}, action) {
+  switch (action.type) {
+    case loadBooks.fulfilled.type:
+    case createBook.fulfilled.type:
+    case removeBook.fulfilled.type:
+      return action.payload;
+    default:
+      return state;
+  }
+}

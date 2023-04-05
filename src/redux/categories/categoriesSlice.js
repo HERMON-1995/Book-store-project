@@ -6,7 +6,9 @@ const categorySlice = createSlice({
   reducers: {
     checkStatus: () => {
       const statusBtn = document.querySelector('.status-btn');
-      statusBtn.style.display = 'none';
+      if (statusBtn) {
+        statusBtn.style.display = 'none';
+      }
       return 'Under Construction.';
     },
   },

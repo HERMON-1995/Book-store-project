@@ -14,10 +14,12 @@ nav {
 .book-h1 {
   color: rgb(3, 180, 239);
   text-align: center;
+  font-size: 50px;
 }
 
-.book-list h1 {
+.add-title {
   text-align: center;
+  margin-top: 50px;
 }
 
 .title,
@@ -25,12 +27,12 @@ nav {
   margin-right: 50px;
 }
 
-.diplaying {
+.display {
   text-align: center;
 }
 
 .remove-btn {
-  margin: 20px 20px 20px 650px;
+  margin: 20px 0 5px 5px;
 }
 
 form {
@@ -46,4 +48,8 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.status-btn {
+  font-size: 50px;
 }
