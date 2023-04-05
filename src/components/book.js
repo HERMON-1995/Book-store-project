@@ -1,33 +1,58 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/booksSlice';
 
-const Book = () => {
-  const books = useSelector((state) => state.books);
+function Book({
+  author, title, category, bookId,
+}) {
   const dispatch = useDispatch();
-  const handleRemove = (e) => {
-    dispatch(removeBook(e.target.id));
-  };
-
+  const handleRemove = () => dispatch(removeBook(bookId));
   return (
-
-    <div className="book-list">
-      <h1>
-        <span className="title">Book Title</span>
-        <span className="author">Book Author</span>
-      </h1>
-      {
-        books.map((book) => (
-          <div key={book.id}>
-            <h2 className="diplaying">
-              <span className="title">{book.title}</span>
-              <span className="author">{book.author}</span>
-            </h2>
-            <button type="submit" className="remove-btn" id={book.id} onClick={handleRemove}>Remove</button>
-          </div>
-        ))
-      }
-    </div>
+    <>
+      <div className="display">
+        <h2 className="book-h1">Book Store CMS</h2>
+        <div>
+          <h3>
+            Category:
+            <em>
+              **
+              { category }
+              **
+            </em>
+          </h3>
+          <h3>
+            Title:
+            <em>
+              **
+              { title }
+              **
+            </em>
+          </h3>
+          <h3>
+            Author:
+            <em>
+              **
+              { author }
+              **
+            </em>
+          </h3>
+        </div>
+        <div>
+          <button type="button" className="remove-btn">Comments</button>
+          <button type="button" className="remove-btn" onClick={handleRemove}>Remove</button>
+          <button type="button" className="remove-btn">Edit</button>
+        </div>
+      </div>
+    </>
   );
+}
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  bookId: PropTypes.string.isRequired,
 };
+
 export default Book;
