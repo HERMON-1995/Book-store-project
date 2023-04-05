@@ -12,12 +12,12 @@ const fetchBooks = () => httpRequest.get(`/apps/${API_ID}/books`);
 
 const create = ({
   id, author, title, category,
-}) => httpRequest.post(`/apps/${API_ID}/books`, {
-  item_id: id,
-  author,
-  title,
-  category,
-});
+}) => {
+  const book = {
+    item_id: id, author, title, category,
+  };
+  return httpRequest.post(`/apps/${API_ID}/books`, book);
+};
 
 const remove = (id) => httpRequest.delete(`/apps/${API_ID}/books/${id}`);
 
