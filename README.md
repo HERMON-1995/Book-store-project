@@ -1,4 +1,4 @@
-# book-store-react-redux
+# Book-store
 
 <a name="readme-top"></a>
 
@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [book-store-react-redux] <a name="about-project"></a>
+# 📖 [Book-store] <a name="about-project"></a>
 
-**[book-store-react-redux]** is a web application built using React, Redux, and React Router. It allows users to browse, search for, and add books to a shopping cart. It uses client-side routing to provide seamless navigation between pages and components without requiring a full page reload.
+**[Book-store]** is a web application built using React, Redux, and React Router. It allows users to browse, search for, and add books to a shopping cart. It uses client-side routing to provide seamless navigation between pages and components without requiring a full page reload.
 
 ## 🛠 Built With <a name="built-with"></a>
 
