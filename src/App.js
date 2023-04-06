@@ -6,7 +6,6 @@ import BooksPage from './pages/booksPage';
 import Categories from './pages/categories';
 
 function App() {
-  const { Fragment } = React;
   return (
     <>
       <NavBar />
