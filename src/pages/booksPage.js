@@ -6,6 +6,7 @@ function BooksPage() {
   return (
     <div className="book-page">
       <DisplayBooks />
+      <div className="hr" />
       <AddBook />
     </div>
   );
