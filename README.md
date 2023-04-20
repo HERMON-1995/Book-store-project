@@ -150,7 +150,7 @@ npx stylelint "**/*.{css,scss}"
  *[HERMON Gebre]*
  
 - GitHub: [@githubhandle](https://github.com/HERMON-1995)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hermon-gebre-03290a228/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/hermon-gebre)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +165,7 @@ npx stylelint "**/*.{css,scss}"
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-   [Issues](https://github.com/HERMON-1995/Book-store-project/issues/6))
+   [Issues](https://github.com/HERMON-1995/Book-store-project/issues/6)
     
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
