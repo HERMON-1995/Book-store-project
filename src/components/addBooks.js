@@ -9,24 +9,11 @@ function AddBook() {
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Fiction');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'title':
-        setTitle(value);
-        break;
-      case 'author':
-        setAuthor(value);
-        break;
-      case 'category':
-        setCategory(value);
-        break;
-      default:
-        break;
-    }
-  };
+  const changeTitle = (e) => setTitle(e.target.value);
+  const changeAuthor = (e) => setAuthor(e.target.value);
+  const changeCategory = (e) => setCategory(e.target.value);
 
-  const handleSubmit = (e) => {
+  const addNewBook = (e) => {
     e.preventDefault();
     if (title && author && category) {
       dispatch(createBook({ title, author, category }));
@@ -39,32 +26,20 @@ function AddBook() {
   return (
     <div>
       <h2 className="add-title">ADD NEW BOOK</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Book title"
-          value={title}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Add author"
-          value={author}
-          onChange={handleChange}
-        />
-        <select name="category" value={category} onChange={handleChange}>
-          <option value="Computer-Science">Computer Science</option>
-          <option value="Astrology">Health</option>
-          <option value="Mathematics">Agriculture</option>
-          <option value="Biology">Mechanical Engineering</option>
-          <option value="Physics">Mathematics</option>
+      <form className="add-form" onSubmit={addNewBook}>
+        <input className="input title-input" type="text" placeholder="Book title" onChange={changeTitle} value={title} />
+        <input className="input title-input" type="text" placeholder="Add author" onChange={changeAuthor} value={author} />
+        <select className="input category-input" onChange={changeCategory} value={category}>
           <option value="Fiction">Fiction</option>
+          <option value="Computer-Science">Computer Science</option>
+          <option value="Health">Health</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Mathematics">Mathematics</option>
           <option value="Biography">Biography</option>
           <option value="Comics">Comics</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button className="primary-button-big" type="submit">ADD BOOK</button>
       </form>
     </div>
   );

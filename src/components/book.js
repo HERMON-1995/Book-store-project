@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
+import Progress from './bookProgress';
 
 function Book(props) {
   const {
@@ -14,46 +15,27 @@ function Book(props) {
   };
 
   return (
-    <div className="display">
-      <h2 className="book-h1">Book Store CMS</h2>
-      <div>
-        <h3>
-          Category:
-          <em>
-            **
-            {category}
-            **
-          </em>
-        </h3>
-        <h3>
-          Title:
-          <em>
-            **
-            {title}
-            **
-          </em>
-        </h3>
-        <h3>
-          Author:
-          <em>
-            **
-            {author}
-            **
-          </em>
-        </h3>
+    <>
+      <div className="book">
+        <div>
+          <div className="book-content">
+            <div className="book-info">
+              <h4 className="b-category">{ category }</h4>
+              <h2 className="b-title">{ title }</h2>
+              <h6 className="b-author">{ author }</h6>
+            </div>
+          </div>
+          <div className="func-buttons">
+            <button className="func-button" type="button">Comments</button>
+            <div className="vr" />
+            <button className="func-button" type="button" onClick={handleRemove}>Remove</button>
+            <div className="vr" />
+            <button className="func-button" type="button">Edit</button>
+          </div>
+        </div>
+        <Progress />
       </div>
-      <div>
-        <button type="button" className="remove-btn">
-          Comments
-        </button>
-        <button type="button" className="remove-btn" onClick={handleRemove}>
-          Remove
-        </button>
-        <button type="button" className="remove-btn">
-          Edit
-        </button>
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -5,7 +5,7 @@ const categorySlice = createSlice({
   initialState: [],
   reducers: {
     checkStatus: () => {
-      const statusBtn = document.querySelector('.status-btn');
+      const statusBtn = document.querySelector('.primary-button-big');
       if (statusBtn) {
         statusBtn.style.display = 'none';
       }
