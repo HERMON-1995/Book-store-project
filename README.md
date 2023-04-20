@@ -165,7 +165,7 @@ npx stylelint "**/*.{css,scss}"
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-    - [Issues](https://github.com/HERMON-1995/Book-store-project/issues?q=is%3Aissue+is%3Aclosed)
+    - [Issues](https://github.com/HERMON-1995/Book-store-project/issues/6))
     
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,7 +181,7 @@ If you like this project please show support by staring ⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-* we would like to give Microverse my sincerest gratitude for accommodating us in the Full-time Software Development program.
+* I would like to give Microverse my sincerest gratitude for accommodating me in the Full-time Software Development program.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
