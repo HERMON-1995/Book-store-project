@@ -1,4 +1,4 @@
-# Book-store
+# Book store project
 
 <a name="readme-top"></a>
 
@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Book-store] <a name="about-project"></a>
+# 📖 [Book store project] <a name="about-project"></a>
 
-**[Book-store]** is a web application built using React, Redux, and React Router. It allows users to browse, search for, and add books to a shopping cart. It uses client-side routing to provide seamless navigation between pages and components without requiring a full page reload.
+**[Book store project]** is a web application built using React, Redux, and React Router. It allows users to browse, search for, and add books to a shopping cart. It uses client-side routing to provide seamless navigation between pages and components without requiring a full page reload.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -84,13 +84,13 @@ setup Linters
 Clone this repository to your desired folder:
 
 ```sh
-  cd book-store-react-redux
-  git clone https://github.com/HERMON-1995/book-store-react-redux.git
+  cd Book store project
+  git clone https://github.com/HERMON-1995/Book-store-project.git
 ```
 ### Install
  
  ```sh
- cd book-store-react-redux
+ cd Book store project
  ```
  ```sh
  npm install
@@ -165,7 +165,7 @@ npx stylelint "**/*.{css,scss}"
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-    - [Issues](https://github.com/HERMON-1995/book-store-react-redux/issues)
+    - [Issues](https://github.com/HERMON-1995/Book-store-project/issues?q=is%3Aissue+is%3Aclosed)
     
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
